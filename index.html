@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кирилл & Алёна · 13.06.2026</title>
+  <meta name="description" content="Приглашение на свадьбу Кирилла и Алены 13 июня 2026 года" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Кирилл & Алёна · 13.06.2026" />
+  <meta property="og:description" content="Будем рады видеть вас на нашем празднике" />
+  <meta property="og:locale" content="ru_RU" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' font-family='Georgia' font-size='34' fill='%23556b4f'%3EК%26А%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&family=Marck+Script&family=Pinyon+Script&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <!-- ENVELOPE INTRO -->
+  <section class="envelope" id="envelope" aria-label="Приглашение на свадьбу">
+    <p class="envelope__title">Приглашаем на<br/>нашу свадьбу</p>
+
+    <svg class="envelope__flaps" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <line class="envelope__flap envelope__flap--tl" x1="0"   y1="0"   x2="50" y2="50"/>
+      <line class="envelope__flap envelope__flap--tr" x1="100" y1="0"   x2="50" y2="50"/>
+      <line class="envelope__flap envelope__flap--bl" x1="0"   y1="100" x2="50" y2="50"/>
+      <line class="envelope__flap envelope__flap--br" x1="100" y1="100" x2="50" y2="50"/>
+    </svg>
+
+    <button class="envelope__seal" id="envelope-seal" type="button" aria-label="Открыть приглашение">
+      <svg class="envelope__heart" viewBox="0 0 32 28" aria-hidden="true">
+        <path d="M16 26 C4 17 0 10 5 5 C9 1 14 3 16 7 C18 3 23 1 27 5 C32 10 28 17 16 26 Z"/>
+      </svg>
+      <span class="envelope__seal-text">открыть<br/>здесь</span>
+    </button>
+
+    <p class="envelope__signature">
+      <span class="envelope__signature-lead">with love,</span>
+      <span class="envelope__signature-name">Кирилл и Алёна</span>
+    </p>
+  </section>
+
+  <!-- Плавающая кнопка управления звуком -->
+  <button id="audio-toggle" class="audio-toggle" aria-label="Включить/выключить музыку" aria-pressed="false">
+    <svg class="icon icon-play" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path d="M8 5v14l11-7z" fill="currentColor"/>
+    </svg>
+    <svg class="icon icon-pause" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <audio id="bg-audio" src="assets/audio/bg.mp3" loop preload="auto"></audio>
+
+  <!-- HERO -->
+  <section class="hero reveal" id="hero">
+    <h1 class="hero__title">Кирилл&nbsp;и&nbsp;Алёна</h1>
+
+    <div class="photos">
+      <p class="photos__quote photos__quote--top">— интересно, кто будет моей женой?</p>
+
+      <div class="photos__pair">
+        <figure class="photo-frame">
+          <div class="photo-frame__img photo-frame__img--groom" data-label="фото жениха">
+            <img src="assets/images/groom.png" alt="Кирилл" loading="lazy" />
+          </div>
+        </figure>
+
+        <figure class="photo-frame">
+          <span class="photo-frame__clip" aria-hidden="true">
+            <svg viewBox="0 0 24 60" width="28" height="68">
+              <path d="M12 4 C7 4 5 8 5 13 L5 42 C5 48 9 52 14 52 C18 52 22 49 22 44 L22 16 C22 12 20 10 17 10 C14 10 12 12 12 15 L12 40"
+                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </span>
+          <div class="photo-frame__img photo-frame__img--bride" data-label="фото невесты">
+            <img src="assets/images/bride.png" alt="Алёна" loading="lazy" />
+          </div>
+        </figure>
+      </div>
+
+      <p class="photos__quote photos__quote--bottom">— ей буду я!</p>
+    </div>
+  </section>
+
+  <!-- CALENDAR -->
+  <section class="section calendar reveal" id="calendar">
+    <p class="calendar__month">Июнь, 2026</p>
+    <div class="calendar__grid" role="grid" aria-label="Календарь июня 2026">
+      <div class="calendar__dow">Пн</div>
+      <div class="calendar__dow">Вт</div>
+      <div class="calendar__dow">Ср</div>
+      <div class="calendar__dow">Чт</div>
+      <div class="calendar__dow">Пт</div>
+      <div class="calendar__dow calendar__dow--active">Сб</div>
+      <div class="calendar__dow">Вс</div>
+
+      <div class="calendar__day">8</div>
+      <div class="calendar__day">9</div>
+      <div class="calendar__day">10</div>
+      <div class="calendar__day">11</div>
+      <div class="calendar__day">12</div>
+      <div class="calendar__day calendar__day--active" aria-current="date">
+        <svg class="calendar__heart" viewBox="0 0 60 70" aria-hidden="true">
+          <path d="M30 67
+                   C 16 56 3 42 3 22
+                   C 3 10 11 4 18 4
+                   C 24 4 28 9 30 17
+                   C 32 9 36 4 42 4
+                   C 49 4 57 10 57 22
+                   C 57 42 44 56 30 67 Z"/>
+        </svg>
+        <span class="calendar__day-num">13</span>
+      </div>
+      <div class="calendar__day">14</div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="section countdown reveal" id="countdown">
+    <h2 class="section__title">до торжества</h2>
+    <div class="countdown__grid" aria-live="polite">
+      <div class="countdown__cell"><span class="countdown__num" data-unit="days">—</span><span class="countdown__label">дней</span></div>
+      <div class="countdown__cell"><span class="countdown__num" data-unit="hours">—</span><span class="countdown__label">часов</span></div>
+      <div class="countdown__cell"><span class="countdown__num" data-unit="minutes">—</span><span class="countdown__label">минут</span></div>
+      <div class="countdown__cell"><span class="countdown__num" data-unit="seconds">—</span><span class="countdown__label">секунд</span></div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="section venue reveal" id="venue">
+    <h2 class="section__title">место проведения</h2>
+    <p class="venue__name">Ресторан «ZakStory»</p>
+    <p class="venue__address">Краснодарский край, Тихорецкий р-н,<br/>станица Новорождественская, ул. Мира, 48Г</p>
+    <div class="venue__photo">
+      <img src="assets/images/venue.jpg" alt="Ресторан ZakStory — банкетный зал" loading="lazy" />
+    </div>
+    <div class="venue__actions">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=ZakStory+%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D1%86%D0%B0+%D0%9D%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D0%9C%D0%B8%D1%80%D0%B0+48%D0%93" target="_blank" rel="noopener">открыть в Google&nbsp;Maps</a>
+      <a class="btn" href="https://yandex.ru/maps/?text=%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB.%20%D0%9C%D0%B8%D1%80%D0%B0%2048%D0%93" target="_blank" rel="noopener">открыть в Яндекс&nbsp;Картах</a>
+    </div>
+  </section>
+
+  <!-- TIMING -->
+  <section class="section timing reveal" id="timing">
+    <span class="timing__decor timing__decor--ring-tl" aria-hidden="true"></span>
+    <span class="timing__decor timing__decor--ring-mr" aria-hidden="true"></span>
+    <span class="timing__decor timing__decor--heart-tr" aria-hidden="true"></span>
+    <span class="timing__decor timing__decor--heart-ml" aria-hidden="true"></span>
+    <span class="timing__decor timing__decor--heart-br" aria-hidden="true"></span>
+    <span class="timing__decor timing__decor--star-bl" aria-hidden="true"></span>
+
+    <figure class="polaroid polaroid--timing">
+      <div class="polaroid__img">
+        <img src="assets/images/happy.jpg" alt="Кирилл и Алёна" loading="lazy" />
+      </div>
+      <figcaption class="polaroid__caption">
+        <span class="polaroid__script">любить</span> каждый день все сильнее
+      </figcaption>
+    </figure>
+
+    <h2 class="section__title">программа вечера</h2>
+    <ul class="timeline">
+      <li class="timeline__item">
+        <span class="timeline__time">16:00</span>
+        <span class="timeline__text">Сбор гостей</span>
+      </li>
+      <li class="timeline__item">
+        <span class="timeline__time">18:00</span>
+        <span class="timeline__text">Праздничный ужин</span>
+      </li>
+      <li class="timeline__item">
+        <span class="timeline__time">23:00</span>
+        <span class="timeline__text">After party</span>
+      </li>
+      <li class="timeline__item">
+        <span class="timeline__time">00:00</span>
+        <span class="timeline__text">Завершение вечера</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- DRESSCODE -->
+  <section class="section dresscode reveal" id="dresscode">
+    <h2 class="section__title section__title--upper">DRESS-CODE</h2>
+    <p class="dresscode__text">Мужчины, доставайте свои свадебные и выпускные костюмы — пришло время снова вывести их в свет и как следует повеселиться ✨</p>
+    <p class="dresscode__text">Девушки, будем рады видеть вас в вечерних нарядах. Вы можете выбрать любой цвет, который вам по душе, но просим по возможности исключить белый и красный. Пусть наш праздник станет не только тёплым, но и по-настоящему красивым 💫</p>
+    <figure class="dresscode__examples">
+      <img src="assets/images/dresscode.jpg" alt="Примеры образов в стиле Black Tie" loading="lazy" />
+    </figure>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="section details-section reveal" id="details">
+    <h2 class="section__title">важные детали</h2>
+    <div class="details">
+      <div class="detail-card">
+        <p class="detail-card__text">
+          Вместо цветов будем рады бутылочке вашего любимого вина — с удовольствием откроем её в один из тёплых вечеров и вспомним этот день
+        </p>
+      </div>
+      <div class="detail-card">
+        <p class="detail-card__text">
+          Территория ресторана не предусматривает наличие детских зон и отдельных пространств для организации детского досуга, позаботьтесь заранее о том, с кем оставить ваших деток на время праздничного&nbsp;вечера&nbsp;✨
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="section rsvp reveal" id="rsvp">
+    <h2 class="section__title rsvp__title">
+      <span class="rsvp__title-main">Анкета гостя</span>
+    </h2>
+    <p class="rsvp__text">
+      Подтвердите ваше присутствие до 10 мая 2026&nbsp;г., это поможет нам в организации торжества
+    </p>
+
+    <form class="rsvp-form" id="rsvp-form" novalidate>
+      <div class="field">
+        <label class="field__label" for="rsvp-name">Имя и фамилия</label>
+        <input class="field__input" id="rsvp-name" name="name" type="text" required />
+      </div>
+
+      <fieldset class="field" aria-labelledby="rsvp-attend-label">
+        <span class="field__label" id="rsvp-attend-label">Подтвердите присутствие на торжестве</span>
+        <div class="options">
+          <label class="option"><input type="radio" name="attend" value="yes" required /> Смогу прийти</label>
+          <label class="option"><input type="radio" name="attend" value="no" /> Не смогу прийти</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="field" aria-labelledby="rsvp-drinks-label">
+        <span class="field__label" id="rsvp-drinks-label">Предпочтения по напиткам</span>
+        <div class="options">
+          <label class="option"><input type="checkbox" name="drinks" value="Шампанское" /> Шампанское</label>
+          <label class="option"><input type="checkbox" name="drinks" value="Белое вино" /> Белое вино</label>
+          <label class="option"><input type="checkbox" name="drinks" value="Красное вино" /> Красное вино</label>
+          <label class="option"><input type="checkbox" name="drinks" value="Коньяк" /> Коньяк</label>
+          <label class="option"><input type="checkbox" name="drinks" value="Виски" /> Виски</label>
+          <label class="option"><input type="checkbox" name="drinks" value="Водка" /> Водка</label>
+          <label class="option"><input type="checkbox" name="drinks" value="Самогон" /> Самогон</label>
+          <label class="option"><input type="checkbox" name="drinks" value="Безалкогольные напитки" /> Безалкогольные напитки</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="field" aria-labelledby="rsvp-transfer-label">
+        <span class="field__label" id="rsvp-transfer-label">Нужен ли будет Вам трансфер в ресторан?</span>
+        <p class="field__hint">Обратный трансфер из ресторана будет организован для всех гостей</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="transfer" value="yes" /> Да, нужен</label>
+          <label class="option"><input type="radio" name="transfer" value="no" /> Нет, доберусь сам(а)</label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label class="field__label" for="rsvp-wishes">Пожелания</label>
+        <textarea class="field__textarea" id="rsvp-wishes" name="wishes" rows="3"></textarea>
+      </div>
+
+      <button class="btn rsvp-form__submit" type="submit">отправить</button>
+      <output class="rsvp-form__status" id="rsvp-status" for="rsvp-form" aria-live="polite"></output>
+    </form>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section contacts reveal" id="contacts">
+    <h2 class="section__title contacts__title">Контакты</h2>
+    <p class="contacts__intro">
+      Если у Вас остались вопросы, то свяжитесь с нами, пожалуйста:
+    </p>
+    <div class="contact">
+      <p class="contact__name">Кирилл</p>
+      <div class="contact__links">
+        <a class="contact__link" href="tel:+79959231132">+7 995 923-11-32</a>
+      </div>
+    </div>
+    <div class="contact">
+      <p class="contact__name">Алёна</p>
+      <div class="contact__links">
+        <a class="contact__link" href="tel:+79199650625">+7 919 965-06-25</a>
+      </div>
+    </div>
+    <div class="contact">
+      <p class="contact__name">Анастасия</p>
+      <p class="contact__role">Организатор</p>
+      <div class="contact__links">
+        <a class="contact__link" href="tel:+79281999480">+7 928 199-94-80</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer reveal">
+    <p class="footer__text">С любовью,</p>
+    <p class="footer__monogram">Кирилл и Алёна</p>
+  </footer>
+
+  <script src="scripts/countdown.js"></script>
+  <script src="scripts/audio.js"></script>
+  <script>
+    // Envelope intro — клик по сургучу распечатывает приглашение
+    (function () {
+      const env = document.getElementById('envelope');
+      const seal = document.getElementById('envelope-seal');
+      if (!env || !seal) return;
+
+      document.body.classList.add('is-locked');
+
+      seal.addEventListener('click', () => {
+        if (env.classList.contains('envelope--opening')) return;
+        env.classList.add('envelope--opening');
+
+        const audio = document.getElementById('bg-audio');
+        if (audio) {
+          try { audio.currentTime = 48; } catch (_) { /* метаданные ещё не готовы */ }
+          audio.play().catch(() => { /* пользователь сможет включить вручную */ });
+        }
+
+        const onEnd = (e) => {
+          if (e.animationName !== 'envelope-fade' || e.target !== env) return;
+          env.removeEventListener('animationend', onEnd);
+          env.setAttribute('hidden', '');
+          document.body.classList.remove('is-locked');
+        };
+        env.addEventListener('animationend', onEnd);
+      });
+    })();
+
+    // Плавное появление секций при скролле
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    // Отправка анкеты гостя в Telegram-бот
+    const TELEGRAM_BOT_TOKEN = '8331893641:AAFoyPqlqsgQmBgt4RT2svszo9PuWvL-2yI';
+    const TELEGRAM_CHAT_ID = '-1003846054073';
+
+    const form = document.getElementById('rsvp-form');
+    const status = document.getElementById('rsvp-status');
+    if (form && status) {
+      const submitBtn = form.querySelector('.rsvp-form__submit');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const data = new FormData(form);
+        const attendMap = { yes: 'Смогу прийти', no: 'Не смогу прийти' };
+        const transferMap = { yes: 'Да, нужен', no: 'Нет, доберусь сам(а)' };
+        const lines = [
+          '🤍 <b>Анкета гостя</b>',
+          '',
+          '<b>Имя:</b> ' + (data.get('name') || '—'),
+          '<b>Присутствие:</b> ' + (attendMap[data.get('attend')] || '—'),
+          '<b>Напитки:</b> ' + (data.getAll('drinks').join(', ') || '—'),
+          '<b>Трансфер в ресторан:</b> ' + (transferMap[data.get('transfer')] || '—'),
+          '<b>Пожелания:</b> ' + (data.get('wishes') || '—'),
+        ];
+
+        status.textContent = 'Отправляем…';
+        if (submitBtn) submitBtn.disabled = true;
+
+        try {
+          const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              chat_id: TELEGRAM_CHAT_ID,
+              text: lines.join('\n'),
+              parse_mode: 'HTML',
+              disable_web_page_preview: true,
+            }),
+          });
+          const json = await res.json();
+          if (!res.ok || !json.ok) throw new Error(json.description || 'Ошибка отправки');
+          status.textContent = 'Спасибо! Анкета отправлена 🤍';
+          form.reset();
+        } catch (err) {
+          status.textContent = 'Не удалось отправить. Напишите нам, пожалуйста, в WhatsApp или по телефону.';
+          console.error('Telegram send failed:', err);
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
