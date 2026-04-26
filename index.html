@@ -339,15 +339,21 @@
     })();
 
     // Плавное появление секций при скролле
-    const io = new IntersectionObserver((entries) => {
+    const revealOnIntersect = (threshold) => new IntersectionObserver((entries, obs) => {
       for (const e of entries) {
         if (e.isIntersecting) {
           e.target.classList.add('is-visible');
-          io.unobserve(e.target);
+          obs.unobserve(e.target);
         }
       }
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    }, { threshold });
+
+    const defaultIo = revealOnIntersect(0.15);
+    document.querySelectorAll('.reveal:not(.countdown)').forEach((el) => defaultIo.observe(el));
+
+    // Красный блок «до торжества» — появляется только когда пользователь явно докрутил
+    const countdownIo = revealOnIntersect(0.3);
+    document.querySelectorAll('.countdown.reveal').forEach((el) => countdownIo.observe(el));
 
     // Отправка анкеты гостя в Telegram-бот
     const TELEGRAM_BOT_TOKEN = '8331893641:AAFoyPqlqsgQmBgt4RT2svszo9PuWvL-2yI';
