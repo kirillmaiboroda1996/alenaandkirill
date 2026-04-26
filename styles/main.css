@@ -984,7 +984,7 @@ body.is-locked { overflow: hidden; }
 }
 
 .calendar + .countdown {
-  margin-top: clamp(0.75rem, 3vw, 1.5rem);
+  margin-top: clamp(1.75rem, 5vw, 3rem);
 }
 
 /* Wavy bottom edge */
