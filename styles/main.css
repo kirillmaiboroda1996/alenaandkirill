@@ -652,6 +652,31 @@ img, svg { display: block; max-width: 100%; }
   font-family: var(--font-serif);
   font-style: italic;
   min-height: 1.4em;
+  line-height: 1.5;
+}
+.rsvp-form__status--error {
+  color: #b04a4a;
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+}
+.rsvp-form__status--error a,
+.rsvp-form__status--error .rsvp-form__retry {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.rsvp-form__status--error .rsvp-form__retry {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.rsvp-form__status--error .rsvp-form__retry:hover {
+  opacity: 0.8;
 }
 
 /* ───── Contacts ───── */
@@ -958,11 +983,8 @@ body.is-locked { overflow: hidden; }
   border-top: 0;
 }
 
-/* На мобильных оттесняем обратный отсчёт ниже первого экрана */
-@media (max-width: 720px) {
-  .section.countdown {
-    margin-top: clamp(3rem, 18vh, 10rem);
-  }
+.calendar + .countdown {
+  margin-top: 0;
 }
 
 /* Wavy bottom edge */

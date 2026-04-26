@@ -10,12 +10,18 @@
   <meta property="og:title" content="Кирилл & Алёна · 13.06.2026" />
   <meta property="og:description" content="Будем рады видеть вас на нашем празднике" />
   <meta property="og:locale" content="ru_RU" />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' font-family='Georgia' font-size='34' fill='%23556b4f'%3EК%26А%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&family=Marck+Script&family=Pinyon+Script&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="preload" as="image" href="assets/images/groom.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/images/bride.jpg" fetchpriority="high" />
 
   <link rel="stylesheet" href="styles/main.css" />
 </head>
@@ -67,7 +73,7 @@
       <div class="photos__pair">
         <figure class="photo-frame">
           <div class="photo-frame__img photo-frame__img--groom" data-label="фото жениха">
-            <img src="assets/images/groom.png" alt="Кирилл" loading="lazy" />
+            <img src="assets/images/groom.jpg" alt="Кирилл" width="900" height="1200" decoding="async" fetchpriority="high" />
           </div>
         </figure>
 
@@ -79,7 +85,7 @@
             </svg>
           </span>
           <div class="photo-frame__img photo-frame__img--bride" data-label="фото невесты">
-            <img src="assets/images/bride.png" alt="Алёна" loading="lazy" />
+            <img src="assets/images/bride.jpg" alt="Алёна" width="900" height="1200" decoding="async" fetchpriority="high" />
           </div>
         </figure>
       </div>
@@ -368,6 +374,7 @@
           '<b>Пожелания:</b> ' + (data.get('wishes') || '—'),
         ];
 
+        status.classList.remove('rsvp-form__status--error');
         status.textContent = 'Отправляем…';
         if (submitBtn) submitBtn.disabled = true;
 
@@ -387,7 +394,14 @@
           status.textContent = 'Спасибо! Анкета отправлена 🤍';
           form.reset();
         } catch (err) {
-          status.textContent = 'Не удалось отправить. Напишите нам, пожалуйста, в WhatsApp или по телефону.';
+          status.classList.add('rsvp-form__status--error');
+          status.innerHTML =
+            'Не удалось отправить анкету 😔 Свяжитесь с нами напрямую — ' +
+            '<a href="tel:+79959231132">Кирилл +7&nbsp;995&nbsp;923-11-32</a> или ' +
+            '<a href="tel:+79199650625">Алёна +7&nbsp;919&nbsp;965-06-25</a>, ' +
+            'или <button type="button" class="rsvp-form__retry">повторите отправку анкеты</button>.';
+          const retry = status.querySelector('.rsvp-form__retry');
+          if (retry) retry.addEventListener('click', () => form.requestSubmit());
           console.error('Telegram send failed:', err);
         } finally {
           if (submitBtn) submitBtn.disabled = false;
